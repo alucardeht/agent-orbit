@@ -1,0 +1,51 @@
+{
+  "name": "@alucardeht/agent-orbit",
+  "version": "2.0.0",
+  "description": "Cross-platform CLI tool for automatic synchronization of global Codex, Claude, Antigravity, and Kimi rules, skills, and agents with a unified GitHub backup",
+  "main": "bin/agent-orbit.js",
+  "bin": {
+    "agent-orbit": "bin/agent-orbit.js"
+  },
+  "scripts": {
+    "link": "npm link",
+    "unlink": "npm unlink -g",
+    "test": "node bin/agent-orbit.js --help"
+  },
+  "keywords": [
+    "codex",
+    "claude",
+    "antigravity",
+    "kimi",
+    "agent-orbit",
+    "sync",
+    "automation",
+    "cli",
+    "github",
+    "backup",
+    "workspace"
+  ],
+  "author": "Julio Lena <juliolena25@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alucardeht/agent-rules.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alucardeht/agent-rules/issues"
+  },
+  "homepage": "https://github.com/alucardeht/agent-rules#readme",
+  "dependencies": {
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "commander": "^11.1.0",
+    "inquirer": "^8.2.7",
+    "octokit": "^3.1.2",
+    "ora": "^5.4.1",
+    "pm2": "^6.0.13",
+    "simple-git": "^3.20.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

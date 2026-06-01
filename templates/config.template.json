@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "github": {
+    "repo": "",
+    "owner": "",
+    "authMethod": "ssh",
+    "token": null
+  },
+  "workspaces": [],
+  "syncRules": {
+    "projectRulesFile": "AGENTS.md",
+    "workspaceRulesDir": ".codex-sync/project-rules",
+    "syncGlobalRules": true,
+    "syncAgents": true,
+    "syncSkills": true,
+    "syncConfig": false
+  },
+  "codex": {
+    "home": null
+  },
+  "autoSync": true,
+  "lastSync": null
+}
