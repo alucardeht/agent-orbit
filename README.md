@@ -42,7 +42,7 @@ Unified repository structure pools rules under distinct folders:
 | :--- | :--- | :--- | :--- |
 | **Codex** | Rules (`AGENTS.md`), Agents (`agents/*`), Skills (`skills/*`) | `~/.codex` | `~/.codex` |
 | **Claude** | Rules (`CLAUDE.md`), Skills (`skills/*`) | `~/.claude` | `~/.claude` |
-| **Antigravity** | Rules (`antigravity_rules.md`), Skills (`skills/*`) | `~/.gemini/config`<br>`~/.gemini/antigravity` | `~/.gemini/config`<br>`~/.gemini/antigravity` |
+| **Antigravity** | Rules (`GEMINI.md`), Skills (`skills/*`) | `~/.gemini`<br>`~/.gemini/antigravity` | `~/.gemini`<br>`~/.gemini/antigravity` |
 | **Kimi** | Rules (`rules/*`), Skills (`skills/*`) | `~/.kimi-code`<br>`~/.config/agents` | `~/.kimi-code`<br>`~/.config/agents` |
 
 ---
@@ -89,6 +89,6 @@ agent-orbit doctor
 
 ## 📅 Daily Workflow & Best Practices
 
-1.  **Edit your rules normally:** Edit global `AGENTS.md` (Codex), `CLAUDE.md` (Claude), or `antigravity_rules.md` (Antigravity).
+1.  **Edit your rules normally:** Edit global `AGENTS.md` (Codex), `CLAUDE.md` (Claude), or `GEMINI.md` (Antigravity).
 2.  **Auto-Sync in 5 seconds:** The daemon automatically watches these files. When you save a file, it debounces the change for 5 seconds (to group multiple quick modifications into a single transaction) and pushes it quietly to GitHub.
 3.  **Cross-machine Pull:** When you sit at your second machine, simply fire `agent-orbit pull` (or let the active daemon auto-pull) to distribute the latest changes instantly!
