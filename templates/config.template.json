@@ -1,22 +1,57 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "github": {
-    "repo": "",
+    "repo": "agent-rules",
     "owner": "",
     "authMethod": "ssh",
     "token": null
   },
-  "workspaces": [],
-  "syncRules": {
-    "projectRulesFile": "AGENTS.md",
-    "workspaceRulesDir": ".codex-sync/project-rules",
-    "syncGlobalRules": true,
-    "syncAgents": true,
-    "syncSkills": true,
-    "syncConfig": false
-  },
-  "codex": {
-    "home": null
+  "targets": {
+    "codex": {
+      "enabled": true,
+      "home": {
+        "darwin": "~/.codex",
+        "win32": "~/.codex"
+      },
+      "syncGlobalRules": true,
+      "syncSkills": true,
+      "syncAgents": true
+    },
+    "claude": {
+      "enabled": true,
+      "home": {
+        "darwin": "~/.claude",
+        "win32": "~/.claude"
+      },
+      "syncGlobalRules": true,
+      "syncSkills": true
+    },
+    "antigravity": {
+      "enabled": true,
+      "home": {
+        "darwin": "~/.gemini/antigravity",
+        "win32": "~/.gemini/antigravity"
+      },
+      "configHome": {
+        "darwin": "~/.gemini/config",
+        "win32": "~/.gemini/config"
+      },
+      "syncGlobalRules": true,
+      "syncSkills": true
+    },
+    "kimi": {
+      "enabled": true,
+      "home": {
+        "darwin": "~/.kimi-code",
+        "win32": "~/.kimi-code"
+      },
+      "configHome": {
+        "darwin": "~/.config/agents",
+        "win32": "~/.config/agents"
+      },
+      "syncGlobalRules": true,
+      "syncSkills": true
+    }
   },
   "autoSync": true,
   "lastSync": null
