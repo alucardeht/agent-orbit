@@ -10,7 +10,7 @@ const { runDaemon } = require('../lib/daemon');
 const { syncAll, pullAndDistribute } = require('../lib/syncer');
 const { loadConfig, getConfigPath } = require('../lib/config');
 const { getAgentPaths } = require('../lib/paths');
-const { runPM2Command } = require('../lib/pm2-command');
+const { runPM2Command, isPM2Installed } = require('../lib/pm2-command');
 const gitManager = require('../lib/git');
 
 const pkg = require('../package.json');
@@ -117,8 +117,33 @@ program
       console.log(`  - ${chalk.bold(agent)}: ${tgt.enabled ? chalk.green('ENABLED') : chalk.red('DISABLED')}`);
     });
 
-    console.log(chalk.cyan('\nPM2 Daemon Status:'));
-    runPM2Command('status');
+    console.log(chalk.cyan('\nWatcher Daemon Status:'));
+    const configDir = path.dirname(getConfigPath());
+    const pidFilePath = path.join(configDir, 'daemon.pid');
+    let nativeRunning = false;
+    let nativePid = null;
+    if (fs.existsSync(pidFilePath)) {
+      try {
+        const pidStr = fs.readFileSync(pidFilePath, 'utf8').trim();
+        const pid = parseInt(pidStr, 10);
+        if (!isNaN(pid)) {
+          process.kill(pid, 0);
+          nativeRunning = true;
+          nativePid = pid;
+        }
+      } catch (err) {}
+    }
+
+    if (nativeRunning) {
+      console.log(`  Native Watcher: ${chalk.green('RUNNING')} (PID: ${nativePid})`);
+    } else {
+      console.log(`  Native Watcher: ${chalk.red('STOPPED')}`);
+    }
+
+    if (isPM2Installed()) {
+      console.log(chalk.cyan('\nPM2 Daemon Status:'));
+      runPM2Command('status');
+    }
   });
 
 program
