@@ -1,8 +1,8 @@
 # Agent Orbit (`agent-orbit`)
 
-`agent-orbit` is a premium, unified, cross-platform CLI tool designed to automatically back up and synchronize all your AI agent rules, skills, and settings across multiple developer machines in real-time.
+`agent-orbit` is a premium, unified, cross-platform CLI tool designed to automatically back up and synchronize all your AI agent rules, skills, and custom agents across multiple developer machines in real-time.
 
-Instead of running multiple background watchers and maintaining separate repositories for each tool, `agent-orbit` consolidates **Codex**, **Claude Code**, **Antigravity**, and **Kimi** configurations into a **single, secure, private GitHub repository** and a **single low-overhead PM2 background watcher daemon**.
+Instead of running multiple background watchers and maintaining separate repositories for each tool, `agent-orbit` consolidates **Codex**, **Claude Code**, **Antigravity**, and **Kimi** rules and skills into a **single, secure, private GitHub repository** and a **single low-overhead PM2 background watcher daemon**.
 
 ---
 
@@ -40,10 +40,10 @@ Unified repository structure pools rules under distinct folders:
 
 | Agent / Target | Files Synchronized | macOS Paths | Windows Paths |
 | :--- | :--- | :--- | :--- |
-| **Codex** | Rules (`AGENTS.md`), Agents (`agents/*`), Skills (`skills/*`), Settings (`config.toml`) | `~/.codex` | `~/.codex` |
+| **Codex** | Rules (`AGENTS.md`), Agents (`agents/*`), Skills (`skills/*`) | `~/.codex` | `~/.codex` |
 | **Claude** | Rules (`CLAUDE.md`), Skills (`skills/*`) | `~/.claude` | `~/.claude` |
-| **Antigravity** | Rules (`antigravity_rules.md`), Skills (`skills/*`), Config (`config.json`), MCP Config (`mcp_config.json`) | `~/.gemini/config`<br>`~/.gemini/antigravity` | `~/.gemini/config`<br>`~/.gemini/antigravity` |
-| **Kimi** | Config (`config.toml`), Rules (`rules/*`), Skills (`skills/*`) | `~/.kimi-code`<br>`~/.config/agents` | `~/.kimi-code`<br>`~/.config/agents` |
+| **Antigravity** | Rules (`antigravity_rules.md`), Skills (`skills/*`) | `~/.gemini/config`<br>`~/.gemini/antigravity` | `~/.gemini/config`<br>`~/.gemini/antigravity` |
+| **Kimi** | Rules (`rules/*`), Skills (`skills/*`) | `~/.kimi-code`<br>`~/.config/agents` | `~/.kimi-code`<br>`~/.config/agents` |
 
 ---
 
