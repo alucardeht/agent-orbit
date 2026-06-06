@@ -2,7 +2,7 @@
 
 `agent-orbit` is a premium, unified, cross-platform CLI tool designed to automatically back up and synchronize all your AI agent rules, skills, and custom agents across multiple developer machines in real-time.
 
-Instead of running multiple background watchers and maintaining separate repositories for each tool, `agent-orbit` consolidates **Codex**, **Claude Code**, **Antigravity**, and **Kimi** rules and skills into a **single, secure, private GitHub repository** and a **single low-overhead PM2 background watcher daemon**.
+Instead of running multiple background watchers and maintaining separate repositories for each tool, `agent-orbit` consolidates **Codex**, **Claude Code**, **Antigravity**, **Kimi**, and **Minimax** rules and skills into a **single, secure, private GitHub repository** and a **single low-overhead PM2 background watcher daemon**.
 
 ---
 
@@ -44,6 +44,7 @@ Unified repository structure pools rules under distinct folders:
 | **Claude** | Rules (`CLAUDE.md`), Skills (`skills/*`) | `~/.claude` | `~/.claude` |
 | **Antigravity** | Rules (`GEMINI.md`), Skills (`skills/*`) | `~/.gemini`<br>`~/.gemini/antigravity` | `~/.gemini`<br>`~/.gemini/antigravity` |
 | **Kimi** | Rules (`rules/*`), Skills (`skills/*`) | `~/.kimi-code`<br>`~/.config/agents` | `~/.kimi-code`<br>`~/.config/agents` |
+| **Minimax** | Rules (`MINIMAX.md`), Skills (`skills/*`) | `~/.minimax` | `~/.minimax` |
 
 ---
 
@@ -89,6 +90,6 @@ agent-orbit doctor
 
 ## 📅 Daily Workflow & Best Practices
 
-1.  **Edit your rules normally:** Edit global `AGENTS.md` (Codex), `CLAUDE.md` (Claude), or `GEMINI.md` (Antigravity).
+1.  **Edit your rules normally:** Edit global `AGENTS.md` (Codex), `CLAUDE.md` (Claude), `GEMINI.md` (Antigravity), or `MINIMAX.md` (Minimax).
 2.  **Auto-Sync in 5 seconds:** The daemon automatically watches these files. When you save a file, it debounces the change for 5 seconds (to group multiple quick modifications into a single transaction) and pushes it quietly to GitHub.
 3.  **Cross-machine Pull:** When you sit at your second machine, simply fire `agent-orbit pull` (or let the active daemon auto-pull) to distribute the latest changes instantly!
