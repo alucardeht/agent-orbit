@@ -2,7 +2,7 @@
 
 ## Why Unification?
 
-Historically, we developed separate syncing engines (`codex-sync`, `claude-sync`, `kimi-sync`) to back up rules for each AI agent environment individually. However, this approach had three major limitations:
+Historically, we developed separate syncing engines (`agent-orbit (formerly codex-sync)`, `claude-sync`, `kimi-sync`) to back up rules for each AI agent environment individually. However, this approach had three major limitations:
 
 1.  **System Resource Waste:** Each sync daemon ran its own watcher loop (`chokidar`), multiplying system resource consumption.
 2.  **Git Spaghetti:** Managing several distinct GitHub repositories (`codex-rules`, `claude-rules`) created fragmented commits and history.

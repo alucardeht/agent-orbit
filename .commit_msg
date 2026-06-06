@@ -1,7 +1,0 @@
-[OrbitCore] Resolve sync blindness and integrate Minimax agent
-
-Resolve chokidar watcher blindness by forcing creation of missing paths on startup.
-Clear repository agent directories before copying to accurately mirror local deletions.
-Integrate Minimax agent configuration globally with default workspace paths.
-Implement automatic migration of missing configuration targets during boot.
-Refactor background PM2 resolution to use local dependencies and perform silent installations.
