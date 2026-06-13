@@ -45,10 +45,44 @@ Unified repository structure pools rules under distinct folders:
 | **Antigravity** | Rules (`GEMINI.md`), Skills (`skills/*`) | `~/.gemini`<br>`~/.gemini/antigravity` | `~/.gemini`<br>`~/.gemini/antigravity` |
 | **Kimi** | Rules (`rules/*`), Skills (`skills/*`) | `~/.kimi-code`<br>`~/.config/agents` | `~/.kimi-code`<br>`~/.config/agents` |
 | **Minimax** | Rules (`MINIMAX.md`), Skills (`skills/*`) | `~/.minimax` | `~/.minimax` |
+| **Cascade** | Rules (`global_rules.md`), Skills (`skills/*`) | `~/.codeium/windsurf` | `~/.codeium/windsurf` |
 
 ---
 
-## 💻 Commands Reference
+## � Migration for Existing Users
+
+If you're already using `agent-orbit`, adding support for new agents (like Cascade) is **fully automatic**:
+
+1. **Pull the latest updates**:
+   ```bash
+   cd agent-orbit
+   git pull origin main
+   ```
+
+2. **Restart the daemon**:
+   ```bash
+   agent-orbit stop
+   agent-orbit start
+   ```
+
+3. **Verify the new target was added**:
+   ```bash
+   agent-orbit status
+   ```
+   You should see the new agent listed as `ENABLED`.
+
+4. **Optional: Initial sync** (if you have the new agent installed):
+   ```bash
+   agent-orbit sync
+   ```
+
+The configuration system automatically detects missing targets and adds them to your existing config. No manual editing required!
+
+If you encounter any issues, you can disable specific agents by editing `~/.config/agent-orbit/config.json` and setting `enabled: false` for that target.
+
+---
+
+## �💻 Commands Reference
 
 ### 1. First-Time Setup
 Launch the interactive configuration wizard. It runs pre-flight SSH connection checks to verify GitHub connectivity before starting:
